@@ -141,7 +141,7 @@ Module BindConnection
         End Try
     End Sub
     Public Sub DeleteRecord(empid As String)
-        sqlQuery = "DELETE FROM employee WHERE empid = @empid"
+        sqlQuery = " ELETE FROM employee WHERE empid = @empid"
         Try
             Using Updatecmd As New MySqlCommand(sqlQuery, conString)
                 Updatecmd.Parameters.AddWithValue("@empid", empid)

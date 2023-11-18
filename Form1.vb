@@ -32,6 +32,15 @@
     End Sub
 
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-
+        Dim answer As DialogResult = MessageBox.Show("Do you want to delete the record?", "Confirmation",
+                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        'check if yes
+        If answer = DialogResult.Yes Then
+            DeleteRecord(txtid.Text)
+        Else
+            MsgBox("Delete cancelled!", vbInformation, "Delete Status")
+            TextClear()
+            txtid.Clear()
+        End If
     End Sub
 End Class

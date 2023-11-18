@@ -68,6 +68,7 @@ Module BindConnection
                 Form1.txtlastname.Text = reader("emplname").ToString
                 Form1.txtposition.Text = reader("position").ToString
                 Form1.txtdepartment.Text = reader("dept").ToString
+                EnableObject()
             Else
                 MsgBox("No Record Found!")
             End If
@@ -117,5 +118,49 @@ Module BindConnection
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+    Public Sub UpdateRecord(empid As String, fname As String, lname As String, pos As String, dept As String)
+        sqlQuery = "UPDATE employee SET empfname = @fname,
+                    emplname = @lname, position = @pos, 
+                    dept = @dept WHERE empid = @empid"
+        Try
+            Using Updatecmd As New MySqlCommand(sqlQuery, conString)
+                'add parameter values
+                Updatecmd.Parameters.AddWithValue("@fname", fname)
+                Updatecmd.Parameters.AddWithValue("@lname", lname)
+                Updatecmd.Parameters.AddWithValue("@pos", pos)
+                Updatecmd.Parameters.AddWithValue("@dept", dept)
+                Updatecmd.Parameters.AddWithValue("@empid", empid)
+                Updatecmd.ExecuteNonQuery()
+            End Using
+            MsgBox("Update successfull!", vbInformation, "Update Status")
+        Catch ex As Exception
+            MessageBox.Show("Error : " & ex.Message)
+        Finally
+            TextClear()
+        End Try
+    End Sub
+    Public Sub TextClear()
+        Form1.txtfirstname.Clear()
+        Form1.txtlastname.Clear()
+        Form1.txtposition.Clear()
+        Form1.txtdepartment.Clear()
+        Form1.txtid.Clear()
+    End Sub
+    Public Sub EnableObject()
+        Form1.txtfirstname.Enabled = True
+        Form1.txtlastname.Enabled = True
+        Form1.txtposition.Enabled = True
+        Form1.txtdepartment.Enabled = True
+        Form1.btnUpdate.Enabled = True
+        Form1.btnDelete.Enabled = True
+    End Sub
+    Public Sub DisableObject()
+        Form1.txtfirstname.Enabled = False
+        Form1.txtlastname.Enabled = False
+        Form1.txtposition.Enabled = False
+        Form1.txtdepartment.Enabled = False
+        Form1.btnUpdate.Enabled = False
+        Form1.btnDelete.Enabled = False
     End Sub
 End Module

@@ -1,10 +1,7 @@
 ﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dbConnect()
-        txtdepartment.Enabled = False
-        txtfirstname.Enabled = False
-        txtlastname.Enabled = False
-        txtposition.Enabled = False
+        DisableObject()
     End Sub
 
     Private Sub btnadd_Click(sender As Object, e As EventArgs) Handles btnadd.Click
@@ -18,5 +15,19 @@
     Private Sub btnView_Click(sender As Object, e As EventArgs) Handles btnView.Click
         Form2.Show() 'display form 2
         Me.Hide() 'hide form 1
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        'confirm before update
+        Dim answer As DialogResult = MessageBox.Show("Do you want to update the record?", "Confirmation",
+                                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        'check if yes
+        If answer = DialogResult.Yes Then
+            UpdateRecord(txtid.Text, txtfirstname.Text, txtlastname.Text, txtposition.Text, txtdepartment.Text)
+        Else
+            MsgBox("Update cancelled!", vbInformation, "Update Status")
+            TextClear()
+            txtid.Clear()
+        End If
     End Sub
 End Class

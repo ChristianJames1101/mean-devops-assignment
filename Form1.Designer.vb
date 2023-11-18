@@ -45,6 +45,8 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnView = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -143,6 +145,8 @@ Partial Class Form1
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.btnDelete)
+        Me.GroupBox2.Controls.Add(Me.btnUpdate)
         Me.GroupBox2.Controls.Add(Me.txtid)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.btnFind)
@@ -157,7 +161,7 @@ Partial Class Form1
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(419, 38)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(334, 359)
+        Me.GroupBox2.Size = New System.Drawing.Size(334, 400)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Find Record"
@@ -180,7 +184,7 @@ Partial Class Form1
         '
         'btnFind
         '
-        Me.btnFind.Location = New System.Drawing.Point(175, 299)
+        Me.btnFind.Location = New System.Drawing.Point(101, 347)
         Me.btnFind.Name = "btnFind"
         Me.btnFind.Size = New System.Drawing.Size(139, 40)
         Me.btnFind.TabIndex = 9
@@ -254,12 +258,32 @@ Partial Class Form1
         'btnView
         '
         Me.btnView.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnView.Location = New System.Drawing.Point(319, 403)
+        Me.btnView.Location = New System.Drawing.Point(146, 403)
         Me.btnView.Name = "btnView"
         Me.btnView.Size = New System.Drawing.Size(152, 35)
         Me.btnView.TabIndex = 2
         Me.btnView.Text = "View Record"
         Me.btnView.UseVisualStyleBackColor = True
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDelete.Location = New System.Drawing.Point(176, 299)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(152, 35)
+        Me.btnDelete.TabIndex = 3
+        Me.btnDelete.Text = "&Delete"
+        Me.btnDelete.UseVisualStyleBackColor = True
+        '
+        'btnUpdate
+        '
+        Me.btnUpdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.Location = New System.Drawing.Point(17, 299)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(152, 35)
+        Me.btnUpdate.TabIndex = 4
+        Me.btnUpdate.Text = "&Update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -302,4 +326,6 @@ Partial Class Form1
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents btnView As Button
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents btnUpdate As Button
 End Class

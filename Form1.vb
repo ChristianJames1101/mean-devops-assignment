@@ -30,4 +30,8 @@
             txtid.Clear()
         End If
     End Sub
+
+    Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
+
+    End Sub
 End Class

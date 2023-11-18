@@ -140,6 +140,20 @@ Module BindConnection
             TextClear()
         End Try
     End Sub
+    Public Sub DeleteRecord(empid As String)
+        sqlQuery = "DELETE FROM employee WHERE empid = @empid"
+        Try
+            Using Updatecmd As New MySqlCommand(sqlQuery, conString)
+                Updatecmd.Parameters.AddWithValue("@empid", empid)
+                Updatecmd.ExecuteNonQuery()
+            End Using
+            MsgBox("Delete successfull!", vbInformation, "Delete Status")
+        Catch ex As Exception
+            MessageBox.Show("Error : " & ex.Message)
+        Finally
+            TextClear()
+        End Try
+    End Sub
     Public Sub TextClear()
         Form1.txtfirstname.Clear()
         Form1.txtlastname.Clear()

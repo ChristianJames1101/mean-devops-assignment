@@ -88,6 +88,7 @@ Partial Class Form2
         Me.Controls.Add(Me.btnDisplay)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Form2"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form2"
         CType(Me.dgvinfo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

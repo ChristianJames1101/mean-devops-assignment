@@ -43,4 +43,8 @@
             txtid.Clear()
         End If
     End Sub
+
+    Private Sub btnPrintmasterlist_Click(sender As Object, e As EventArgs) Handles btnPrintmasterlist.Click
+        Form3.Show()
+    End Sub
 End Class

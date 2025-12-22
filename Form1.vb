@@ -47,4 +47,8 @@
     Private Sub btnPrintmasterlist_Click(sender As Object, e As EventArgs) Handles btnPrintmasterlist.Click
         Form3.Show()
     End Sub
+
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        Form4.Show()
+    End Sub
 End Class

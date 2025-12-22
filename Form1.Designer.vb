@@ -48,6 +48,7 @@ Partial Class Form1
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnView = New System.Windows.Forms.Button()
         Me.btnPrintmasterlist = New System.Windows.Forms.Button()
+        Me.btnPrint = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -146,6 +147,7 @@ Partial Class Form1
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.btnPrint)
         Me.GroupBox2.Controls.Add(Me.btnDelete)
         Me.GroupBox2.Controls.Add(Me.btnUpdate)
         Me.GroupBox2.Controls.Add(Me.txtid)
@@ -205,7 +207,7 @@ Partial Class Form1
         '
         'btnFind
         '
-        Me.btnFind.Location = New System.Drawing.Point(101, 347)
+        Me.btnFind.Location = New System.Drawing.Point(176, 340)
         Me.btnFind.Name = "btnFind"
         Me.btnFind.Size = New System.Drawing.Size(139, 40)
         Me.btnFind.TabIndex = 9
@@ -296,6 +298,15 @@ Partial Class Form1
         Me.btnPrintmasterlist.Text = "Print Master List"
         Me.btnPrintmasterlist.UseVisualStyleBackColor = True
         '
+        'btnPrint
+        '
+        Me.btnPrint.Location = New System.Drawing.Point(24, 340)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.Size = New System.Drawing.Size(139, 40)
+        Me.btnPrint.TabIndex = 12
+        Me.btnPrint.Text = "Print"
+        Me.btnPrint.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -342,4 +353,5 @@ Partial Class Form1
     Friend WithEvents btnDelete As Button
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnPrintmasterlist As Button
+    Friend WithEvents btnPrint As Button
 End Class

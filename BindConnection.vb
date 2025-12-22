@@ -168,6 +168,7 @@ Module BindConnection
         Form1.txtdepartment.Enabled = True
         Form1.btnUpdate.Enabled = True
         Form1.btnDelete.Enabled = True
+        Form1.btnPrint.Enabled = True
     End Sub
     Public Sub DisableObject()
         Form1.txtfirstname.Enabled = False
@@ -176,5 +177,6 @@ Module BindConnection
         Form1.txtdepartment.Enabled = False
         Form1.btnUpdate.Enabled = False
         Form1.btnDelete.Enabled = False
+        Form1.btnPrint.Enabled = False
     End Sub
 End Module
